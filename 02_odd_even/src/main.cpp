@@ -40,18 +40,23 @@ int main(int argc, char *argv[])
 	// --------------- start
 
 	// Get the first argument
-	std::string argumentAsString = argv[1];
-	const char* argumentAsCharArray = argumentAsString.c_str();
+	else
+	{
+		std::string argumentAsString = argv[1];
+		const char* argumentAsCharArray = argumentAsString.c_str();
 
-	//number = argv[1]; // No
-	//should use atoi?
-	// or std::stoi?
+		number = atoi(argumentAsCharArray);
 
-	std::cout << argumentAsString << std::endl; // i think this should be removed
 
-	// --------------- stop
+		//number = argv[1]; // No
+		//should use atoi?
+		// or std::stoi?
 
-	printOddOrEven(number);
+		//std::cout << argumentAsString << std::endl; // i think this should be removed
 
+		// --------------- stop
+
+		printOddOrEven(number);
+	}
 	return 0;
 }
