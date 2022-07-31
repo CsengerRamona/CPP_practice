@@ -15,6 +15,15 @@ void printOddOrEven(int number)
 	}
 }
 
+bool isNotNumber(std::string str)
+{
+	for (char c : str) {
+		if (!(isdigit(c) == 0)) 
+			return false;
+	}
+	return true;
+}
+
 int main(int argc, char *argv[])
 {
 	int number = -13;
@@ -45,7 +54,16 @@ int main(int argc, char *argv[])
 		std::string argumentAsString = argv[1];
 		const char* argumentAsCharArray = argumentAsString.c_str();
 
-		number = atoi(argumentAsCharArray);
+		if (isNotNumber(argumentAsString) == true)
+		{
+			std::cout << "NAN";
+		}
+		else
+		{
+			number = atoi(argumentAsCharArray);
+			printOddOrEven(number);
+		}
+
 
 
 		//number = argv[1]; // No
@@ -56,7 +74,6 @@ int main(int argc, char *argv[])
 
 		// --------------- stop
 
-		printOddOrEven(number);
 	}
 	return 0;
 }
